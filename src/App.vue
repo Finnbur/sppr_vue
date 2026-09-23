@@ -1,13 +1,26 @@
 <script setup>
-
+import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
+import AppItem from './components/AppItem.vue'
 </script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+  <div class="page">
+    <AppHeader title="Home" />
 
-<style scoped></style>
+    <main>
+      <AppItem
+        image="shoes.jpg"
+        title="Shoes"
+        :cost="3"
+      />
+      <AppItem
+        image="socks.jpg"
+        title="Socks"
+        :cost="10"
+      />
+    </main>
+
+    <AppFooter />
+  </div>
+</template>
