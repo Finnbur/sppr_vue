@@ -1,22 +1,26 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
+const props = defineProps({
   image: String,
   title: String,
   cost: Number,
 })
 
-const count = ref(1)
+const emit = defineEmits(['count-change'])
+
+const count = ref(0)
 
 function decreaseCount() {
-  if (count.value > 1) {
+  if (count.value >= 1) {
     count.value--
+    emit('count-change', props.title, count.value, false)
   }
 }
 
 function increaseCount() {
   count.value++
+  emit('count-change', props.title, count.value, true)
 }
 </script>
 
