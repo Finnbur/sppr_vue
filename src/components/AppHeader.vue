@@ -8,7 +8,9 @@ defineProps({
 <template>
   <header class="header">
     <a href="/"><h1>{{ title }}</h1></a>
-    <span class="badge">Count: {{ count }}</span>
-    <a href="/about"><span class="badge">About</span></a>
+    <nav class="nav">
+      <a href="/collection"><span class="badge">Collection ({{ count }})</span></a>
+      <a href="/about"><span class="badge">About</span></a>
+    </nav>
   </header>
 </template>
